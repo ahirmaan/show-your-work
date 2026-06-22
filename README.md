@@ -1,8 +1,32 @@
-# show-your-work
+<div align="center">
 
-A Claude Skill that stops Claude from silently guessing on underspecified tasks — and when you'd rather skip the questions, makes every guess visible instead of hidden.
+```
+ ███████╗██╗  ██╗ ██████╗ ██╗    ██╗
+ ██╔════╝██║  ██║██╔═══██╗██║    ██║
+ ███████╗███████║██║   ██║██║ █╗ ██║
+ ╚════██║██╔══██║██║   ██║██║███╗██║
+ ███████║██║  ██║╚██████╔╝╚███╔███╔╝
+ ╚══════╝╚═╝  ╚═╝ ╚═════╝  ╚══╝╚══╝
+   Y O U R   W O R K
+```
+
+**The Claude Skill that stops Claude guessing in the dark.**
+Asks only what changes the output. Skips the rest. Shows you exactly what it invented when you tell it not to ask.
+
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Claude Skill](https://img.shields.io/badge/claude-skill-c77dff.svg)](SKILL.md)
+[![Status](https://img.shields.io/badge/status-v1-orange.svg)](#scope-and-limits)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
+
+[Problem](#the-problem) · [Before/After](#before--after) · [Install](#install) · [Examples](examples.md) · [Scope](#scope-and-limits) · [Contributing](#contributing)
+
+</div>
+
+---
 
 ## The problem
+
+Claude either interrogates you with generic questions before doing anything, or silently guesses and you find out it's wrong three messages later. Both cost more time than one well-aimed question would have.
 
 You ask Claude to build something — a website, a contract, a plan — and the prompt is missing details Claude actually needs. Right now Claude does one of two things: asks a pile of generic clarifying questions before doing anything, or quietly fills the gaps with invented assumptions and hopes they're right. When the guess is wrong, you have to notice, explain what's off, and wait for a redo. Sometimes more than once.
 
@@ -49,7 +73,7 @@ This is a standard Claude Skill — a folder with a `SKILL.md` file. Works with 
 
 **Claude Code / personal skills:**
 ```bash
-git clone https://github.com/<your-username>/show-your-work.git
+git clone https://github.com/ahirmaan/show-your-work.git
 cp -r show-your-work ~/.claude/skills/show-your-work
 ```
 Restart your Claude Code session, then ask it to do any underspecified task — it should trigger automatically. You can confirm it loaded by running `/skills`.
