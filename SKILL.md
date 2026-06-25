@@ -34,7 +34,7 @@ This is the step that keeps this skill from turning into the same generic-clarif
 
 **Only blocking and shaping gaps get surfaced to the user — as a question, or later as a flagged assumption.** Fill cosmetic gaps silently, with no mention at all. If everything gets flagged, the flags stop being useful; the entire point is that the user can tell real signal from noise at a glance.
 
-If a gap is severe enough that an incorrect guess could be actively harmful or void (e.g. fabricating a governing-law clause in a contract, inventing a medical claim), do not offer to guess on that specific point — ask for it directly, even in "just guess" mode, and explain briefly why.
+**Harm carve-out**: a gap crosses the harm threshold when a wrong guess could cause legal, financial, medical, or career harm that the user can't easily undo after the fact. Examples: fabricating a governing-law clause in a contract, inventing a medical claim, guessing jurisdiction for tax advice, fabricating facts on a visa application, writing deployment steps for a production payment system without knowing the stack. The principle is irreversibility of real-world consequence, not severity of annoyance. When a gap crosses this threshold, do not offer to guess on that specific point — ask for it directly, even in "just guess" mode, even under a standing "never ask me questions" instruction — and explain briefly why.
 
 ## Step 3: Ask, but only for what actually matters — and always offer the opt-out
 
@@ -51,13 +51,19 @@ Before I [do the task], a few things change the result a lot:
 Or just say "use your best judgment" and I'll go ahead — I'll flag exactly what I assumed so you can correct anything that's off.
 ```
 
+**Adapting tone for emotionally sensitive tasks**: The template above is optimized for professional and transactional deliverables. When the task is emotionally charged — a eulogy, a difficult personal letter, a memorial, a resignation under duress — the *logic* stays the same (identify blocking gaps, triage, ask only what's needed) but the *delivery* should adapt. Drop the numbered-list-with-opt-out format and ask like a thoughtful collaborator would: conversationally, with acknowledgment of the emotional weight. The flag block (Step 4) should also soften — "Assumptions made (swap any out)" is appropriate for a website's color palette but not for invented details about someone's deceased parent. In these cases, frame flagged assumptions as "things I'd like you to fill in with what's real" rather than defaults to swap. The skill's job is still to make invented details visible; the format just needs to not be tone-deaf about what those details represent.
+
 There's no fixed number of questions to cap this at — a one-page landing site might have one real gap; a multi-party contract or a full brand system might legitimately have eight. The right number is "however many blocking/shaping gaps actually exist for this specific task," not a rule of thumb borrowed from a different kind of task. What matters is that every question on the list earns its place via Step 2's triage — if you're tempted to pad the list with anything cosmetic just to look thorough, cut it. A long list of all-necessary questions is fine; a short list padded with unnecessary ones defeats the point.
 
 If the gaps are so extensive that answering them would basically mean designing the whole thing through Q&A (e.g. the task is really "help me figure out what I even want," not "build this for me"), say that plainly rather than dumping every question at once — it's a sign the request needs a different kind of conversation, not a longer list.
 
+**Do not skip this step.** If blocking or shaping gaps exist, the ask must happen before any output is produced. The user's original task request ("build me a website," "write a Reddit post," "draft a contract") is not implicit permission to guess — it is the trigger for this step, not a bypass around it. Stop here, present the questions, and wait for the user's response before proceeding to Step 4.
+
 ## Step 4: If the user opts to skip Q&A, proceed and flag
 
-When the user says something like "just guess," "use your best judgment," "you decide," or simply doesn't answer the clarifying questions and asks for the output anyway — produce the task, then lead with a compact assumptions block, before or alongside the actual deliverable (not buried at the end where it's easy to skip past).
+**This step only applies after Step 3 has happened.** The user must have been shown the questions and explicitly chosen to skip them — by saying something like "just guess," "use your best judgment," "you decide," or by ignoring the questions and asking for the output anyway. The user's original request does not count as opting out; "write me a Reddit post" is a task request, not permission to skip the ask. Never jump from Step 2 directly to Step 4 — the user must be given the choice first.
+
+When the user has opted to skip — produce the task, then lead with a compact assumptions block, before or alongside the actual deliverable (not buried at the end where it's easy to skip past).
 
 ALWAYS use this exact shape for the flag block:
 
@@ -85,6 +91,8 @@ Treat answered gaps as settled facts — don't re-ask or second-guess them. For 
 This is not about remembering things across conversations, learning the user's preferences over time, or building a profile. It's a single-prompt check: does *this* request have enough information for *this* task, right now, regardless of any history. If the user has a persistent-memory tool or has told Claude their preferences before, that's separate context this skill doesn't manage or replace.
 
 This also isn't a tool for interrogating the user on every detail of a plan before any work happens — if that's what's wanted, a different approach (lots of sequential questions, working through a full decision tree together) fits better. This skill is for the opposite situation: minimal necessary friction, maximum visible honesty about what got invented when friction was skipped.
+
+Finally, this skill's gap-identification logic applies to emotionally sensitive tasks (eulogies, personal letters, memorials) just as well as transactional ones — the four buckets and the triage still work. But the prescribed interaction format (numbered questions, "swap any out" flag blocks) was designed for professional deliverables and can feel transactional or callous in those contexts. When the skill's logic applies but the emotional register calls for a different mode of delivery, adapt the format while preserving the underlying discipline: still identify what's blocking, still surface what was invented, still make corrections cheap — just do it with the warmth the situation warrants. The skill tells you *what* to ask and *what* to flag; *how* to say it is a judgment call that should match the task.
 
 ## Worked examples
 
